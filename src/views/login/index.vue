@@ -124,7 +124,6 @@ export default {
         await this.$refs.loginForm.validate()
         await this.GetToken(this.loginForm)
         this.$router.push('/')
-        console.log(123)
       } catch (error) {
         console.log(error)
       } finally {

@@ -1,4 +1,4 @@
-import { getToken, removeToken, setToken } from '@/utils/auth'
+import { getToken, removeToken, setToken, setTimeStamp } from '@/utils/auth'
 import { getUserInfo, geuUserDetailById, login } from '@/api/user'
 const state = {
   token: getToken() || null,
@@ -23,9 +23,8 @@ const mutations = {
 const actions = {
   async GetToken({ commit }, result) {
     const data = await login(result)
-    setToken(data)
     commit('SETTOKEN', data)
-    console.log(data)
+    setTimeStamp()
   },
   async getUserInfo({ commit }) {
     const result = await getUserInfo()
