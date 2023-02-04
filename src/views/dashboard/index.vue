@@ -1,6 +1,14 @@
 <template>
   <div class="dashboard-container">
     <div class="dashboard-text">name: {{ name }}</div>
+    <pageTools :show-before="true">
+      <template #before>
+        <span>123333</span>
+      </template>
+      <template #after>
+        <span>1244444</span>
+      </template>
+    </pageTools>
   </div>
 </template>
 
